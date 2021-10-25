@@ -13,3 +13,4 @@ sources:
       - name: public_employees
       - name: public_customers
       - name: public_suppliers
+      - name: public_shippers
