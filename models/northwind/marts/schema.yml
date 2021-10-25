@@ -25,6 +25,14 @@ models:
               - unique
               - not_null
 
+    - name: dim_employees
+      columns:
+         - name: employee_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
     - name: dim_suppliers
       columns:
          - name: supplier_id
@@ -40,11 +48,7 @@ models:
            tests:
               - unique
               - not_null
-   - name: dim_employees
-      columns:
-         - name: employee_id
-           description: "Chave primária"
-           tests:
-              - unique
-              - not_null
+     
+
+
     
