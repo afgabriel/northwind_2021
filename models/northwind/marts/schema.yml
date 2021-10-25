@@ -1,0 +1,44 @@
+version: 2
+
+models:
+    - name: fact_orders
+      columns:
+         - name: order_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
+    - name: dim_customers
+      columns:
+         - name: customer_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
+    - name: dim_products
+      columns:
+         - name: product_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
+    - name: dim_suppliers
+      columns:
+         - name: supplier_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
+    - name: dim_employees
+      columns:
+         - name: employee_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+
+    
