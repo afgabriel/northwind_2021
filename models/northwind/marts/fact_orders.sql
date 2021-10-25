@@ -21,7 +21,7 @@ with
         select
             orders.order_id	
             , customers.customer_sk as customer_fk
-            , employees.employee_sk as employee_fk
+            , employees.employee_id as employee_fk
             , orders.ship_region
             , orders.shipped_date
             , orders.ship_country
