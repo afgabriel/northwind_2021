@@ -13,6 +13,10 @@ with
         select *
         from {{ ref('dim_products') }}
     )
+    , shippers as (
+        select *
+        from {{ ref('dim_shippers') }}
+    )
     , suppliers as (
         select *
         from {{ ref('dim_suppliers') }}
@@ -22,6 +26,7 @@ with
             orders.order_id	
             , customers.customer_sk as customer_fk
             , employees.employee_id as employee_fk
+            , shippers.shipper_sk as shipper_fk	 
             , orders.ship_region
             , orders.shipped_date
             , orders.ship_country
@@ -35,6 +40,7 @@ with
         from {{ ref('stg_orders') }} orders
         left join employees on orders.employee_id = employees.employee_id
         left join customers on orders.customer_id = customers.customer_id
+        left join shippers on orders.shipper_id = shippers.shipper_id
     )
     , order_details_with_sk as (
         select
