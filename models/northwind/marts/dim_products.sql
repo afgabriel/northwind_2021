@@ -1,4 +1,4 @@
-{ config(materialized='table') }}
+{{ config(materialized='table') }}
 
 with
     staging as (
@@ -7,8 +7,6 @@ with
 )
     , transformed as (
         select
-
-
            row_number() over (order by product_id) as product_sk -- auto incremental surrogate key
            ,product_id	
            ,product_name
