@@ -33,12 +33,18 @@ models:
               - unique
               - not_null
 
-    - name: dim_employees
+    - name: dim_shippers
+      columns:
+         - name: shipper_id
+           description: "Chave primária"
+           tests:
+              - unique
+              - not_null
+   - name: dim_employees
       columns:
          - name: employee_id
            description: "Chave primária"
            tests:
               - unique
               - not_null
-
     
